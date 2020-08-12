@@ -23,3 +23,18 @@ for (var i = 9; i < 18; i++) {
         $("#" + i).addClass("future");
     }
 }
+
+$(".saveBtn").on("click", function() {
+    for (var i = 9; i < 17; i++) {
+        var value = [i]
+        var text = $("#" + value).val();
+        if (!text) {
+            console.log(value + " none")
+        }
+    else {
+        console.log(value + " " + text)
+    }
+        
+        
+    }
+})
