@@ -36,12 +36,15 @@ $(".saveBtn").on("click", function () {
         var value = [i]
         var text = $("#" + value).val();
         if (!text) {
-            localStorage.setItem(value + ":00", "nothing scheduled.")
+            localStorage.setItem(value + ":00", "");
         }
         else {
-            localStorage.setItem(value + ":00", text + ".");
+            localStorage.setItem(value + ":00", text);
         }
-
-
     }
 })
+
+for (var i = 0; i < localStorage.length; i++) {
+    $("." + i).text((localStorage.getItem(localStorage.key(i))));
+    
+}
