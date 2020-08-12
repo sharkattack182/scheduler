@@ -7,12 +7,19 @@
 
 //display time
 
-$("#currentDay").text(moment().format( "MMMM Do YYYY"));
+$("#currentDay").text(moment().format("MMMM Do YYYY"));
 
 var currentTime = moment().format("HH");  //set variable for military time
 for (var i = 9; i < 18; i++) {      // i will run a loop for numbers 9-18 
-    if(i === parseInt(currentTime)) {   //this line compares the number generated above to the current hour in military time
+    if (i === parseInt(currentTime)) {   //this line compares the number generated above to the current hour in military time
         $("#" + i).addClass("present");         // using jq i added a class to the div with the id whos number matches the correct time above
     }
 }
 
+
+//this is the same code from above with a frew minor changes to add the class for the future divs. I dont need one for past since they are auto set to past.
+for (var i = 9; i < 18; i++) {
+    if (i > parseInt(currentTime)) {
+        $("#" + i).addClass("future");
+    }
+}
