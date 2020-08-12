@@ -44,7 +44,8 @@ $(".saveBtn").on("click", function () {
     }
 })
 
-for (var i = 0; i < localStorage.length; i++) {
+// so i basically created a for loop that would loop through the local storage length i then assigned those numbers to a key and called the item from local strage by key i then attatched the text to the text area by class
+for (var i = 0; i < localStorage.length; i++) {                             // i tried to look them up by the id but since my for loop was based on 0-8 i just thought it would be easier to add clases with those numbers since i couldnt change the ids as they are being used else where 
     $("." + i).text((localStorage.getItem(localStorage.key(i))));
     
 }
