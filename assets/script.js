@@ -36,10 +36,10 @@ $(".saveBtn").on("click", function () {
         var value = [i]
         var text = $("#" + value).val();
         if (!text) {
-            console.log(value + " none")
+            localStorage.setItem(value + ":00", "nothing scheduled.")
         }
         else {
-            console.log(value + " " + text)
+            localStorage.setItem(value + ":00", text + ".");
         }
 
 
