@@ -9,32 +9,39 @@
 
 $("#currentDay").text(moment().format("MMMM Do YYYY"));
 
-var currentTime = moment().format("HH");  //set variable for military time
-for (var i = 9; i < 18; i++) {      // i will run a loop for numbers 9-18 
-    if (i === parseInt(currentTime)) {   //this line compares the number generated above to the current hour in military time
-        $("#" + i).addClass("present");         // using jq i added a class to the div with the id whos number matches the correct time above
+
+// this compares current time to the divs and styles it by adding a class to that div
+
+var currentTime = moment().format("HH");
+for (var i = 9; i < 18; i++) {
+    if (i === parseInt(currentTime)) {
+        $("#" + i).addClass("present");
     }
 }
 
 
-//this is the same code from above with a frew minor changes to add the class for the future divs. I dont need one for past since they are auto set to past.
+//this does the same as above but gives all future timeblocks a seperate class
+
 for (var i = 9; i < 18; i++) {
     if (i > parseInt(currentTime)) {
         $("#" + i).addClass("future");
     }
 }
 
-$(".saveBtn").on("click", function() {
+
+//this runs an on click function so whenever i press a save button it checks all of my texts inputs and stores their values along with the hour they correspond 
+
+$(".saveBtn").on("click", function () {
     for (var i = 9; i < 17; i++) {
         var value = [i]
         var text = $("#" + value).val();
         if (!text) {
             console.log(value + " none")
         }
-    else {
-        console.log(value + " " + text)
-    }
-        
-        
+        else {
+            console.log(value + " " + text)
+        }
+
+
     }
 })
